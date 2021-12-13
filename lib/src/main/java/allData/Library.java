@@ -5,25 +5,37 @@ package allData;
 
 import allData.structure.*;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
 public class Library {
     public boolean someLibraryMethod() {
         return true;
     }
 
     public static void main(String[] args) {
+
+//        String input = "ABCD EFG";
+//        String output =Implement.reverseString(input);
+//        String reversed = Implement.reverseStringLoop(input);
+//        String recur = Implement.reverseRecur(input);
+//        System.out.println(output);
+//        System.out.println(reversed);
+//        System.out.println(recur);
 //        LinkedListTest();
 //        StackTest();
 //        QueueTest();
-//        GenericQueueTest();
 //        pseudo();
 //        IntStackMax();
-//        String input = "ABCD EFG";
-//        String output =Implement.reverseString(input);
-//        System.out.println(output);
+//
 //        String brackets = "Ah{(Ma)}";
 //        boolean res = Implement.isBalanced(brackets);
 //        System.out.println(res);
 
+//        arraySimulator();
+//        myArraySimulator();
+        hashingSimulator();
     }
 
     public static void LinkedListTest() {
@@ -43,7 +55,7 @@ public class Library {
         ll.printList();
         System.out.println(ll.search("XX"));
         ll.middle(ll);
-        System.out.println("middle value => " +ll.middle(ll));
+        System.out.println("middle value => " + ll.middle(ll));
 
         ll2.printList();
 //
@@ -101,7 +113,7 @@ public class Library {
         System.out.println(pseudoQueue.dequeue());
     }
 
-    public static void IntStackMax(){
+    public static void IntStackMax() {
         StackInt st = new StackInt();
         st.push(10);
         st.push(20);
@@ -114,6 +126,52 @@ public class Library {
         int maax = StackInt.getMaxStack(st);
         System.out.println(StackInt.getMaxStack(st));
         System.out.println(StackInt.maximum(st));
+    }
+
+    public static void arraySimulator() {
+        Array array = new Array(2);
+        System.out.println(array.isEmpty());
+        array.insert(10);
+        array.insert(20);
+        array.insert(30);
+        array.insert(40);
+        array.insert(50);
+        System.out.print("\nbefore");
+        array.print();
+        array.removeAt(1);
+        System.out.print("\nafter");
+        array.print();
+        array.removeAt(3);
+        System.out.print("\nlast");
+        array.print();
+
+        System.out.println("\n" + array.isEmpty());
+    }
+
+    public static void myArraySimulator() {
+        MyArray array = new MyArray(4);
+        System.out.println(array.isEmpty());
+        array.insert(10);
+        array.insert(20);
+        array.insert(30);
+        array.print();
+        array.removeAt(3);
+        System.out.println(array.atIndex(40));
+    }
+
+    public static void hashingSimulator(){
+        Hashing hashing = new Hashing();
+        char out2 = hashing.findFirstNonRepeatedChar("a bin binary");
+        char out3 = hashing.firstRepeatedChar("a bin binary");
+        System.out.println(out2);
+        System.out.println(out3);
+
+        String str ="gem";
+        String str2 ="emg";
+        System.out.println(str.hashCode());
+        System.out.println(hashing.sameString(str,str2));
+
+
     }
 }
 
